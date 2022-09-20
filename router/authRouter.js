@@ -16,13 +16,7 @@ routerAuth.post("/register", (req, res) => {
 
   routerAuth.get('/usersList', function(req, res) {
     AuthSchema.find({}, function(err, users) {
-      var userMap = {};
-  
-      users.forEach(function(user) {
-        userMap[user._id] = user;
-      });
-  
-      res.send(userMap);  
+      res.send(users);  
     });
   });
 
